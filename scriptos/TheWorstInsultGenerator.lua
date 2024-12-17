@@ -9,10 +9,12 @@ for i = 0, rng do
     message = message .. "" .. words[math.random(1, #words)]
 end
 
-game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer(message,"All")
-
-for _, v in next, game:GetService("TextChatService").TextChannels:GetChildren() do
-    if v:FindFirstChild(game:GetService("Players").LocalPlayer.Name) and v.Name ~= 'RBXSystem' then
-        v:SendAsync(message)
+if not game:GetService("TextChatService") == nil then 
+    for _, v in next, game:GetService("TextChatService").TextChannels:GetChildren() do
+        if v:FindFirstChild(game:GetService("Players").LocalPlayer.Name) and v.Name ~= 'RBXSystem' then
+            v:SendAsync(message)
+        end
     end
+else
+    game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer(message,"All")
 end
