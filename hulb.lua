@@ -21,5 +21,5 @@ lulz:NewButton("Socky Bomb", "reset to detonate, make sure u are always the clos
 end)
 
 ball:NewButton("Collect (almost) Every Chomik In The Realm", "may have to run a few times for the badges", function()
-  loadstring(game:HttpGet("https://raw.githubusercontent.com/ch-omik/dumb-hacks-ig/refs/heads/main/scriptos/SockyBomb.lua"))()
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/ch-omik/dumb-hacks-ig/refs/heads/main/scriptos/ChomikCapturer.lua"))()
 end)
